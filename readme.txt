@@ -31,7 +31,7 @@ An answer to that question.
 
 == Screenshots ==
 
-1. ![Screenshot 1](assets/ss.png)
+1. Cekwin main page
 
 == Changelog ==
 
