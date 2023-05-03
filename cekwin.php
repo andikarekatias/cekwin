@@ -4,9 +4,9 @@
  */
 /**
 * Plugin Name: Cekwin
-* Plugin URI: https://andikarekatias.com
+* Plugin URI: https://github.com/andikarekatias/cekwin
 * Description: Cek kelulusan siswa
-* Version: 1.0.1
+* Version: 1.0.2
 * Author: Andika Rekatias
 * Author URI: https://andikarekatias.com/contact.html
 * License: GPL2 or later
@@ -30,6 +30,18 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 Copyright 2005-2015 Automattic, Inc.
 */
+require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/andikarekatias/cekwin/',
+	__FILE__,
+	'cekwin'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
 if( ! defined ('ABSPATH')){
 	echo "404";
 	die;
