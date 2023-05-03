@@ -1,5 +1,5 @@
-=== Plugin Name ===
-Contributors: rekatias
+=== Cekwin ===
+Contributors: rekatias,
 Donate link: https://www.paypal.com/paypalme/andikarekatias
 Tags: Announcement, Notification, Notice, Pengumuman
 Requires at least: 5.4
