@@ -6,7 +6,7 @@
 * Plugin Name: Cekwin
 * Plugin URI: https://github.com/andikarekatias/cekwin
 * Description: Cek kelulusan siswa
-* Version: 1.0.2
+* Version: 1.0.3
 * Author: Andika Rekatias
 * Author URI: https://andikarekatias.com/contact.html
 * License: GPL2 or later
@@ -85,25 +85,29 @@ class Cekwin{
 		}				
 	}	
 	function admin_enqueue() {
-		// Datatable
-		wp_enqueue_style( 'dt-jquerycss','https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css' );
-    	wp_enqueue_style( 'dt-css','https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css' );
-    	// Custom
-        wp_register_style( 'custom_wp_admin_css', plugin_dir_url( __FILE__ ) . 'assets/w3.css', false, '4.0.0' );
-        wp_enqueue_style( 'custom_wp_admin_css' );
-        wp_enqueue_style( 'custom_wp_admin_css2', plugin_dir_url( __FILE__ ) . 'assets/custom.css', false, '1.0.0' );
+		$current_screen = get_current_screen();
+		if ($current_screen && $current_screen->id === 'toplevel_page_cekwin') {
+			// Datatable
+			wp_enqueue_style( 'dt-jquerycss','https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css' );
+			wp_enqueue_style( 'dt-css','https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css' );
+			// Custom
+			wp_register_style( 'custom_wp_admin_css', plugin_dir_url( __FILE__ ) . 'assets/w3.css', false, '4.0.0' );
+			wp_enqueue_style( 'custom_wp_admin_css' );
+			wp_enqueue_style( 'custom_wp_admin_css2', plugin_dir_url( __FILE__ ) . 'assets/custom.css', false, '1.0.0' );
 
-        wp_register_script( 'main', plugin_dir_url( __FILE__ ) . 'assets/main.js', array('jquery-core'), false, true );
-    	wp_enqueue_script( 'main' );
-    	wp_enqueue_script( 'custom', plugin_dir_url( __FILE__ ) . 'assets/custom.js', array(), false, true );
+			wp_register_script( 'main', plugin_dir_url( __FILE__ ) . 'assets/main.js', array('jquery-core'), false, true );
+			wp_enqueue_script( 'main' );
+			wp_enqueue_script( 'custom', plugin_dir_url( __FILE__ ) . 'assets/custom.js', array(), false, true );
 
-    	// Datatable
-    	wp_enqueue_script( 'dt-jquery','https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js' );
-    	wp_enqueue_script( 'dt-btn','https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js' );
-		wp_enqueue_script( 'dt-jszip','https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js' );
-		wp_enqueue_script( 'dt-pdfmake','https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js' );
-		wp_enqueue_script( 'dt-html5','https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js' );
-		wp_enqueue_script( 'dt-print','https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js' );	
+			// Datatable
+			wp_enqueue_script( 'dt-jquery','https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js' );
+			wp_enqueue_script( 'dt-btn','https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js' );
+			wp_enqueue_script( 'dt-jszip','https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js' );
+			wp_enqueue_script( 'dt-pdfmake','https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js' );
+			wp_enqueue_script( 'dt-html5','https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js' );
+			wp_enqueue_script( 'dt-print','https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js' );	
+			return;
+		}		
 	}
 	function cekwin_form_enqueue_style(){
 		wp_register_style( 'w3_css', plugin_dir_url( __FILE__ ) . 'assets/w3.css', false, '4.0.0' );
