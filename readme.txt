@@ -35,6 +35,9 @@ An answer to that question.
 
 == Changelog ==
 
+= 1.0.3 =
+* Css and js just for plugin
+
 = 1.0.2 =
 * Add Library Plugin Update Checker
 
