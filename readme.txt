@@ -35,6 +35,12 @@ An answer to that question.
 
 == Changelog ==
 
+= 1.0.4 =
+* Increase scurity
+* Add Nonce Field in form
+* Server side validation
+* Display form error
+
 = 1.0.3 =
 * Css and js just for plugin
 
