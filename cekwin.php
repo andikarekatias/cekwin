@@ -7,6 +7,7 @@
 * Plugin URI: https://github.com/andikarekatias/cekwin
 * Description: Cek kelulusan siswa
 * Version: 1.0.4
+* Tested up to: 6.2
 * Author: Andika Rekatias
 * Author URI: https://andikarekatias.com/contact.html
 * License: GPL2 or later
